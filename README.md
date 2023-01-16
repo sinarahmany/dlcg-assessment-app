@@ -99,5 +99,9 @@ To view list of all products grouped by their category
 
     http://localhost:8000/products
 
+To add a new product
+
+    http://localhost:8000/products/create
+
 
 
