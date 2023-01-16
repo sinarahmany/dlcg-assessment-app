@@ -9,6 +9,9 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'parent_id', 'active'];
+    protected $attributes = [
+        'active' => 1,
+    ];
 
     public function scopeRoot($query)
     {

@@ -20,11 +20,11 @@ export default function Guest({ header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={route('products')} active={route().current('products')}>
+                                <NavLink href={route('products.index')} active={route().current('products.index')}>
                                     Products
                                 </NavLink>
 
-                                <NavLink href={route('categories')} active={route().current('categories')}>
+                                <NavLink href={route('categories.index')} active={route().current('categories.index')}>
                                     Categories
                                 </NavLink>
                             </div>

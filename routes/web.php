@@ -17,12 +17,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+//    return Inertia::render('Welcome', [
+//        'canLogin' => Route::has('login'),
+//        'canRegister' => Route::has('register'),
+//        'laravelVersion' => Application::VERSION,
+//        'phpVersion' => PHP_VERSION,
+//    ]);
+    return redirect()->route('categories.index');
 });
 
 Route::get('/dashboard', function () {
@@ -36,11 +37,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/products', function (){
-    return Inertia::render('Products');
-})->name('products');
+    return Inertia::render('Product/Products');
+})->name('products.index');
+
+Route::get('/products/create', function (){
+    return Inertia::render('Product/Add');
+})->name('products.create');
 
 Route::get('/categories', function (){
     return Inertia::render('Categories');
-})->name('categories');
+})->name('categories.index');
 
 require __DIR__.'/auth.php';

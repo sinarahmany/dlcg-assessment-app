@@ -4,6 +4,7 @@ import Table from "@/Components/Table";
 import NestedList from "@/Components/NestedList";
 import Sidebar from "@/Components/Sidebar";
 import ProductGrid from "@/Components/ProductGrid";
+import {Link} from "@inertiajs/inertia-react";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -48,12 +49,14 @@ export default function Products() {
                                     </p>
                                 </div>
                                 <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                                    <button
-                                        type="button"
-                                        className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
-                                    >
-                                        Add product
-                                    </button>
+                                    <Link href={route('products.create')}>
+                                        <button
+                                            type="button"
+                                            className="inline-flex items-center justify-center rounded-md border border-transparent bg-gray-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+                                        >
+                                            Add product
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                             <main className="mx-auto py-6 px-6 max-w-7xl lg:px-8">
